@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff"
+    android:gravity="center"
+    tools:context=".Attendence">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@color/dap_color">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/displayImageView"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/user"
+                    app:civ_border_color="@color/colorAccent"
+                    app:civ_border_width="1dp" />
+
+
+                <TextView
+                    android:id="@+id/selfi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text=""
+                    android:textColor="@color/darkWhite"
+                    android:textSize="18dp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/gen_white"
+                    android:textSize="18dp" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_above="@+id/button_upload"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/colorAccent"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/camera_gallery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/camera"
+                            android:layout_width="140dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/dap_color"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <!--                        <ImageView-->
+                                <!--                            android:layout_width="64dp"-->
+                                <!--                            android:layout_height="64dp"-->
+                                <!--                            android:background="@drawable/dap"-->
+                                <!--                            android:padding="10dp"/>-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="CAMERA"
+                                    android:textColor="@color/darkWhite"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_margin="10dp"
+                                    android:background="@color/grey_light" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="Open Camera To Take a Photo"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/galleryBtn"
+                            android:layout_width="140dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/dap_color"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <!--                        <ImageView-->
+                                <!--                            android:layout_width="64dp"-->
+                                <!--                            android:layout_height="64dp"-->
+                                <!--                            android:background="@drawable/dap"-->
+                                <!--                            android:padding="10dp"/>-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Gallery"
+                                    android:textColor="@color/darkWhite"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_margin="10dp"
+                                    android:background="@color/grey_light" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="Open Camera To Take a Photo"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!--                <Button-->
+                        <!--                    android:id="@+id/cameraBtn"-->
+                        <!--                    android:layout_width="wrap_content"-->
+                        <!--                    android:layout_height="wrap_content"-->
+                        <!--                    android:gravity="center"-->
+                        <!--                    android:text="Camera"-->
+                        <!--                    android:visibility="gone" />-->
+
+                        <!--                <Button-->
+                        <!--                    android:id="@+id/galleryBtn"-->
+                        <!--                    android:layout_width="wrap_content"-->
+                        <!--                    android:layout_height="wrap_content"-->
+                        <!--                    android:layout_marginLeft="10dp"-->
+                        <!--                    android:gravity="center"-->
+                        <!--                    android:text="Gallery"-->
+                        <!--                    android:visibility="gone" />-->
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/upload_login_logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/login_upload"
+                            android:layout_width="140dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/dap_color"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <!--                        <ImageView-->
+                                <!--                            android:layout_width="64dp"-->
+                                <!--                            android:layout_height="64dp"-->
+                                <!--                            android:background="@drawable/dap"-->
+
+                                <!--                            android:padding="10dp"/>-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Upload Login"
+                                    android:textColor="@color/darkWhite"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_margin="10dp"
+                                    android:background="@color/grey_light" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="Upload Your Login Information"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/logout_upload"
+                            android:layout_width="140dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/dap_color"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <!--                        <ImageView-->
+                                <!--                            android:layout_width="64dp"-->
+                                <!--                            android:layout_height="64dp"-->
+                                <!--                            android:background="@drawable/dap"-->
+                                <!--                            android:padding="10dp"/>-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Upload LogOut"
+                                    android:textColor="@color/darkWhite"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_margin="10dp"
+                                    android:background="@color/grey_light" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="Upload Your LogOut Information"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!--                <Button-->
+                        <!--                    android:id="@+id/login_upload"-->
+                        <!--                    android:layout_width="wrap_content"-->
+                        <!--                    android:layout_height="wrap_content"-->
+                        <!--                    android:gravity="center"-->
+                        <!--                    android:text="LOGIN UPLOAD"-->
+                        <!--                    android:visibility="gone" />-->
+
+                        <!--                <Button-->
+                        <!--                    android:id="@+id/logout_upload"-->
+                        <!--                    android:layout_width="wrap_content"-->
+                        <!--                    android:layout_height="wrap_content"-->
+                        <!--                    android:layout_marginLeft="10dp"-->
+                        <!--                    android:gravity="center"-->
+                        <!--                    android:text="LOGOUT UPLOAD"-->
+                        <!--                    android:visibility="gone" />-->
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/login_logout_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/attendence_list"
+                            android:layout_width="140dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/dap_color"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <!--                        <ImageView-->
+                                <!--                            android:layout_width="64dp"-->
+                                <!--                            android:layout_height="64dp"-->
+                                <!--                            android:background="@drawable/dap"-->
+
+                                <!--                            android:padding="10dp"/>-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="Login List"
+                                    android:textColor="@color/darkWhite"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_margin="10dp"
+                                    android:background="@color/grey_light" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="Today's Login List"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/attendence_logou_list"
+                            android:layout_width="140dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/dap_color"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <!--                        <ImageView-->
+                                <!--                            android:layout_width="64dp"-->
+                                <!--                            android:layout_height="64dp"-->
+                                <!--                            android:background="@drawable/dap"-->
+                                <!--                            android:padding="10dp"/>-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="LogOut List"
+                                    android:textColor="@color/darkWhite"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_margin="10dp"
+                                    android:background="@color/grey_light" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="Today's LogOut List"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!--                <Button-->
+                        <!--                    android:id="@+id/attendence_list"-->
+                        <!--                    android:layout_width="wrap_content"-->
+                        <!--                    android:layout_height="wrap_content"-->
+                        <!--                    android:gravity="center"-->
+                        <!--                    android:text="LOGIN LIST"-->
+                        <!--                    android:visibility="gone" />-->
+
+                        <!--                <Button-->
+                        <!--                    android:id="@+id/attendence_logou_list"-->
+                        <!--                    android:layout_width="wrap_content"-->
+                        <!--                    android:layout_height="wrap_content"-->
+                        <!--                    android:gravity="center"-->
+                        <!--                    android:text="LOGOUT LIST"-->
+                        <!--                    android:visibility="gone" />-->
+
+                        <!--                <Button-->
+                        <!--                    android:id="@+id/map_marker"-->
+                        <!--                    android:layout_width="wrap_content"-->
+                        <!--                    android:layout_height="wrap_content"-->
+                        <!--                    android:layout_marginLeft="10dp"-->
+                        <!--                    android:gravity="center"-->
+                        <!--                    android:text="MAP"-->
+                        <!--                    android:visibility="gone" />-->
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/map_marker"
+                            android:layout_width="140dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:visibility="gone"
+                            app:cardCornerRadius="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/dap_color"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <!--                        <ImageView-->
+                                <!--                            android:layout_width="64dp"-->
+                                <!--                            android:layout_height="64dp"-->
+                                <!--                            android:background="@drawable/dap"-->
+
+                                <!--                            android:padding="10dp"/>-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="MAP"
+                                    android:textColor="@color/darkWhite"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_margin="10dp"
+                                    android:background="@color/grey_light" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="Track On Map With Marker"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/logout"
+                            android:layout_width="140dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:cardCornerRadius="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/dap_color"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <!--                        <ImageView-->
+                                <!--                            android:layout_width="64dp"-->
+                                <!--                            android:layout_height="64dp"-->
+                                <!--                            android:background="@drawable/dap"-->
+                                <!--                            android:padding="10dp"/>-->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="LogOut"
+                                    android:textColor="@color/darkWhite"
+                                    android:textStyle="bold" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_margin="10dp"
+                                    android:background="@color/grey_light" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="LogOut From App"
+                                    android:textColor="@android:color/white" />
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+
+                    <!--            <Button-->
+                    <!--                android:id="@+id/logout"-->
+                    <!--                android:layout_width="wrap_content"-->
+                    <!--                android:layout_height="wrap_content"-->
+                    <!--                android:layout_marginTop="10dp"-->
+                    <!--                android:gravity="center"-->
+                    <!--                android:text="LOGOUT" />-->
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

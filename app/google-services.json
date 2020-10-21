@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "868816636108",
+    "firebase_url": "https://attendance-1f97f.firebaseio.com",
+    "project_id": "attendance-1f97f",
+    "storage_bucket": "attendance-1f97f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868816636108:android:217988a67266f326209a69",
+        "android_client_info": {
+          "package_name": "com.example.dapattendenc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868816636108-0i53926241s4jd40msk4qv49v6ae9lsb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_XXdO2Z4jliySafK3LUQziM6iKrJV3qA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "868816636108-0i53926241s4jd40msk4qv49v6ae9lsb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
